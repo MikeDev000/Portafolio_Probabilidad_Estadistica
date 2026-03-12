@@ -1,0 +1,526 @@
+/* ═══════════════════════════════════════════════════════════════════
+   main.css  —  Hoja de estilos del Portafolio de Estadística
+
+   Paleta de colores:
+     Primario (morado)  : #6c63ff
+     Oscuro sidebar     : #1a1d2e / #12152a
+     Fondo contenido    : #f0f4f8
+     Blanco tarjetas    : #ffffff
+     Texto principal    : #1a1d2e
+     Texto secundario   : #6b7280
+   ═══════════════════════════════════════════════════════════════════ */
+
+
+/* ───────────────────────────────────────────────────────────────────
+   BASE GLOBAL
+─────────────────────────────────────────────────────────────────── */
+.root {
+    -fx-font-family: "Segoe UI", "Arial", sans-serif;
+    -fx-font-size: 13px;
+    -fx-background-color: #1a1d2e;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════
+   SIDEBAR
+═══════════════════════════════════════════════════════════════════ */
+.sidebar {
+    -fx-background-color: #1a1d2e;
+}
+
+/* Cabecera del sidebar (zona del "logo") */
+.sidebar-header {
+    -fx-background-color: #12152a;
+}
+
+.sidebar-title {
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+}
+
+.sidebar-subtitle {
+    -fx-text-fill: #7b7f9e;
+    -fx-font-size: 11px;
+}
+
+.sidebar-separator {
+    -fx-background-color: #2d3150;
+    -fx-pref-height: 1px;
+    -fx-border-color: transparent;
+}
+
+/* Etiqueta de grupo de navegación (ej: "GENERAL", "TEMAS") */
+.nav-section-label {
+    -fx-text-fill: #4a5080;
+    -fx-font-size: 10px;
+    -fx-font-weight: bold;
+    -fx-padding: 0 0 2 6;
+}
+
+/* ── Botón base del menú lateral ─────────────────────────────────── */
+.nav-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #a0a4c0;
+    -fx-font-size: 13px;
+    -fx-padding: 10 12 10 12;
+    -fx-alignment: CENTER_LEFT;
+    -fx-cursor: hand;
+    -fx-background-radius: 8px;
+    -fx-border-color: transparent;
+    -fx-border-radius: 8px;
+}
+
+/* Los labels dentro del botón heredan el color */
+.nav-button .label {
+    -fx-text-fill: #a0a4c0;
+}
+
+/* Hover sobre un botón del menú */
+.nav-button:hover {
+    -fx-background-color: rgba(108, 99, 255, 0.12);
+    -fx-text-fill: #e0e3f0;
+}
+
+.nav-button:hover .label {
+    -fx-text-fill: #e0e3f0;
+}
+
+/* Botón activo (tema seleccionado): indicador izquierdo + fondo */
+.nav-button-active {
+    /* Truco de doble fondo: franja morada izquierda + fondo semitransparente */
+    -fx-background-color: #6c63ff, rgba(108, 99, 255, 0.18);
+    -fx-background-insets: 0 228 0 0, 0 0 0 4;
+    -fx-background-radius: 0 0 0 0, 6px;
+    -fx-text-fill: #ffffff;
+}
+
+.nav-button-active .label {
+    -fx-text-fill: #ffffff;
+}
+
+/* Footer del sidebar (datos del alumno) */
+.sidebar-footer {
+    -fx-background-color: transparent;
+}
+
+.footer-label {
+    -fx-text-fill: #4a5080;
+    -fx-font-size: 10px;
+}
+
+.footer-value {
+    -fx-text-fill: #dde0f0;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+}
+
+.footer-group {
+    -fx-text-fill: #7b7f9e;
+    -fx-font-size: 11px;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════
+   ÁREA DE CONTENIDO (Dashboard)
+═══════════════════════════════════════════════════════════════════ */
+.content-scroll {
+    -fx-background: #f0f4f8;
+    -fx-background-color: #f0f4f8;
+    -fx-border-color: transparent;
+}
+
+.content-scroll > .viewport {
+    -fx-background-color: #f0f4f8;
+}
+
+.content-scroll > .scroll-bar:vertical {
+    -fx-pref-width: 8px;
+}
+
+.content-area {
+    -fx-background-color: #f0f4f8;
+}
+
+/* Título de página ("Dashboard") */
+.page-title {
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1a1d2e;
+}
+
+/* Subtítulo de página */
+.page-subtitle {
+    -fx-font-size: 14px;
+    -fx-text-fill: #6b7280;
+}
+
+/* Títulos de sección dentro del dashboard */
+.section-title {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1a1d2e;
+    -fx-padding: 4 0 0 0;
+}
+
+
+/* ── Tarjeta de bienvenida ─────────────────────────────────────── */
+.welcome-card {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 14px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.09), 18, 0, 0, 4);
+    -fx-padding: 24;
+}
+
+.card-title {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1a1d2e;
+}
+
+.card-date {
+    -fx-font-size: 12px;
+    -fx-text-fill: #9ca3af;
+}
+
+.welcome-description {
+    -fx-font-size: 13px;
+    -fx-text-fill: #4b5563;
+    -fx-line-spacing: 3;
+}
+
+
+/* ── Chips de información del alumno ──────────────────────────── */
+.info-chip {
+    -fx-background-color: #f5f7ff;
+    -fx-background-radius: 10px;
+    -fx-border-color: #e4e6ff;
+    -fx-border-radius: 10px;
+    -fx-border-width: 1px;
+    -fx-padding: 10 18 10 18;
+    -fx-min-width: 110px;
+}
+
+.info-chip-accent {
+    -fx-background-color: #ede9ff;
+    -fx-background-radius: 10px;
+    -fx-border-color: #c4b5fd;
+    -fx-border-radius: 10px;
+    -fx-border-width: 1px;
+    -fx-padding: 10 18 10 18;
+    -fx-min-width: 110px;
+}
+
+.chip-label {
+    -fx-font-size: 9px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #9ca3af;
+}
+
+.chip-value {
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1a1d2e;
+}
+
+.chip-value-accent {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #6c63ff;
+}
+
+
+/* ── Tarjetas de temas en el grid ─────────────────────────────── */
+.topic-card {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 12px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.07), 14, 0, 0, 3);
+    -fx-padding: 20;
+    -fx-cursor: hand;
+    -fx-border-color: transparent;
+    -fx-border-radius: 12px;
+    -fx-border-width: 1.5px;
+}
+
+.topic-card:hover {
+    -fx-effect: dropshadow(gaussian, rgba(108,99,255,0.22), 22, 0, 0, 6);
+    -fx-border-color: #c4b5fd;
+    -fx-background-color: #fdfcff;
+}
+
+.topic-card-title {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1a1d2e;
+}
+
+.topic-card-desc {
+    -fx-font-size: 12px;
+    -fx-text-fill: #6b7280;
+    -fx-line-spacing: 2;
+}
+
+.topic-card-link {
+    -fx-font-size: 12px;
+    -fx-text-fill: #6c63ff;
+    -fx-font-weight: bold;
+}
+
+/* Tarjeta placeholder (tema por agregar) */
+.topic-card-placeholder {
+    -fx-background-color: #f9fafb;
+    -fx-background-radius: 12px;
+    -fx-border-color: #e5e7eb;
+    -fx-border-radius: 12px;
+    -fx-border-width: 1.5px;
+    -fx-border-style: dashed;
+    -fx-padding: 20;
+}
+
+.topic-card-title-muted {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #9ca3af;
+}
+
+.topic-card-desc-muted {
+    -fx-font-size: 12px;
+    -fx-text-fill: #d1d5db;
+    -fx-line-spacing: 2;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════
+   VENTANAS DE TEMA (BaseTopicWindow)
+═══════════════════════════════════════════════════════════════════ */
+.topic-window-root {
+    -fx-background-color: #f5f7fb;
+}
+
+/* ── Header oscuro de la ventana de tema ──────────────────────── */
+.topic-header {
+    -fx-background-color: linear-gradient(to right, #1a1d2e 0%, #2a2f50 100%);
+    -fx-min-height: 85px;
+}
+
+.topic-header-icon {
+    -fx-icon-color: #6c63ff;
+}
+
+.topic-header-title {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #ffffff;
+}
+
+.topic-header-subtitle {
+    -fx-font-size: 12px;
+    -fx-text-fill: #8b8fa8;
+}
+
+/* ScrollPane de la ventana de tema */
+.topic-scroll {
+    -fx-background: #f5f7fb;
+    -fx-background-color: #f5f7fb;
+    -fx-border-color: transparent;
+}
+
+.topic-scroll > .viewport {
+    -fx-background-color: #f5f7fb;
+}
+
+.topic-content {
+    -fx-background-color: #f5f7fb;
+}
+
+/* ── Tarjetas de sección (Definición / Fórmula / Demo) ─────────── */
+.topic-section-card {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 12px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.07), 14, 0, 0, 3);
+    -fx-padding: 20;
+}
+
+/* Ícono de sección (book, superscript) */
+.section-icon {
+    -fx-icon-color: #6c63ff;
+}
+
+/* Ícono de la sección demo (verde) */
+.section-icon-demo {
+    -fx-icon-color: #10b981;
+}
+
+/* Badge de sección (ej: "DEFINICIÓN") */
+.section-badge {
+    -fx-background-color: #ede9ff;
+    -fx-background-radius: 4px;
+    -fx-text-fill: #6c63ff;
+    -fx-font-size: 10px;
+    -fx-font-weight: bold;
+    -fx-padding: 3 8 3 8;
+}
+
+/* Badge de la sección demo (verde) */
+.section-badge-demo {
+    -fx-background-color: #d1fae5;
+    -fx-background-radius: 4px;
+    -fx-text-fill: #059669;
+    -fx-font-size: 10px;
+    -fx-font-weight: bold;
+    -fx-padding: 3 8 3 8;
+}
+
+/* Título dentro de cada sección */
+.section-title-text {
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1a1d2e;
+    -fx-padding: 4 0 0 0;
+}
+
+/* Texto de la definición */
+.definition-text {
+    -fx-font-size: 13px;
+    -fx-text-fill: #4b5563;
+    -fx-line-spacing: 4;
+}
+
+/* ── Bloque de fórmula/código (fondo oscuro) ──────────────────── */
+.formula-block {
+    -fx-background-color: #1a1d2e;
+    -fx-background-radius: 8px;
+    -fx-padding: 16 20 16 20;
+}
+
+.formula-text {
+    -fx-font-family: "Consolas", "Courier New", monospace;
+    -fx-font-size: 14px;
+    -fx-text-fill: #e2e8f0;
+    -fx-line-spacing: 6;
+}
+
+/* Descripción bajo la fórmula */
+.formula-desc {
+    -fx-font-size: 12px;
+    -fx-text-fill: #6b7280;
+    -fx-line-spacing: 3;
+    -fx-padding: 4 0 0 0;
+}
+
+
+/* ── Sección de Demostración ──────────────────────────────────── */
+.demo-instruction {
+    -fx-font-size: 13px;
+    -fx-text-fill: #4b5563;
+    -fx-line-spacing: 3;
+}
+
+.input-label {
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #374151;
+}
+
+.demo-input {
+    -fx-background-color: #f8f9ff;
+    -fx-border-color: #dde1ff;
+    -fx-border-radius: 7px;
+    -fx-background-radius: 7px;
+    -fx-border-width: 1.5px;
+    -fx-padding: 8 12 8 12;
+    -fx-font-size: 14px;
+}
+
+.demo-input:focused {
+    -fx-border-color: #6c63ff;
+    -fx-background-color: #fdfcff;
+}
+
+/* Botón principal "Calcular" */
+.btn-calcular {
+    -fx-background-color: #6c63ff;
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-padding: 10 24 10 24;
+    -fx-background-radius: 8px;
+    -fx-cursor: hand;
+    -fx-border-color: transparent;
+    -fx-effect: dropshadow(gaussian, rgba(108,99,255,0.35), 10, 0, 0, 3);
+}
+
+.btn-calcular:hover {
+    -fx-background-color: #5a52e0;
+    -fx-effect: dropshadow(gaussian, rgba(108,99,255,0.5), 14, 0, 0, 4);
+}
+
+.btn-calcular:pressed {
+    -fx-background-color: #4a42d0;
+    -fx-effect: dropshadow(gaussian, rgba(108,99,255,0.2), 6, 0, 0, 1);
+}
+
+/* Botón secundario "Limpiar" */
+.btn-limpiar {
+    -fx-background-color: transparent;
+    -fx-text-fill: #6b7280;
+    -fx-font-size: 13px;
+    -fx-padding: 10 16 10 16;
+    -fx-background-radius: 8px;
+    -fx-cursor: hand;
+    -fx-border-color: #d1d5db;
+    -fx-border-radius: 8px;
+    -fx-border-width: 1.5px;
+}
+
+.btn-limpiar:hover {
+    -fx-background-color: #f3f4f6;
+    -fx-text-fill: #374151;
+}
+
+/* ── Caja de resultado ────────────────────────────────────────── */
+.result-box {
+    -fx-background-color: #f0f4ff;
+    -fx-background-radius: 10px;
+    -fx-border-color: #c4b5fd;
+    -fx-border-radius: 10px;
+    -fx-border-width: 1px;
+}
+
+.result-label {
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #8b7fd4;
+    -fx-text-transform: uppercase;
+}
+
+.result-value {
+    -fx-font-size: 26px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #6c63ff;
+    -fx-font-family: "Consolas", "Courier New", monospace;
+}
+
+.result-extra {
+    -fx-font-size: 13px;
+    -fx-text-fill: #4b5563;
+}
+
+.result-placeholder {
+    -fx-font-size: 13px;
+    -fx-text-fill: #9ca3af;
+    -fx-font-style: italic;
+}
+
+/* ── Mensajes de error ────────────────────────────────────────── */
+.error-text {
+    -fx-text-fill: #ef4444;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
+
+.selected {
+    -fx-border-color: red;
+    -fx-border-width: 2px;
+    -fx-border-style: solid;
+}
