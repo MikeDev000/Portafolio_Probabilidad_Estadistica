@@ -9,31 +9,17 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
-/**
- * ╔══════════════════════════════════════════════════════════════╗
- * ║  ProbabilidadClasicaWindow                                   ║
- * ║  Tema 1: Probabilidad Clásica (Regla de Laplace)             ║
- * ║                                                              ║
- * ║  Este archivo sirve como EJEMPLO completo de cómo crear      ║
- * ║  una ventana de tema. Copia y adapta este patrón.            ║
- * ╚══════════════════════════════════════════════════════════════╝
- */
 public class EjemploTema extends BaseTopicWindow {
 
-    // ── Campos de entrada del usuario ─────────────────────────────
+    // Campos de entrada del usuario
     private TextField txtFavorables;  // Casos favorables para el evento A
     private TextField txtTotales;     // Casos totales del espacio muestral
 
-    // ── Labels donde se muestra el resultado ──────────────────────
+    // Labels donde se muestra el resultado
     private Label lblResultadoDecimal;
     private Label lblResultadoPorcentaje;
     private Label lblResultadoFraccion;
     private Label lblMensaje;
-
-
-    // ═══════════════════════════════════════════════════════
-    //  MÉTODOS OBLIGATORIOS  —  Información del tema
-    // ═══════════════════════════════════════════════════════
 
     @Override
     public String getTitulo() {
@@ -81,17 +67,15 @@ public class EjemploTema extends BaseTopicWindow {
     }
 
 
-    // ═══════════════════════════════════════════════════════
     //  buildDemoSection() — Sección interactiva del tema
-    //  Aquí construyes tu UI de cálculo/demostración
-    // ═══════════════════════════════════════════════════════
+    //  Aquí construye UI de cálculo/demostración
 
     @Override
     public Node buildDemoSection() {
         VBox demo = new VBox(16);
         demo.setPadding(new Insets(4, 0, 4, 0));
 
-        // ── Descripción de la demo ──────────────────────────
+        // Descripción de la demo
         Label instruccion = new Label(
                 "Ingresa el número de casos favorables y el total de casos del espacio "
                         + "muestral para calcular la probabilidad del evento A."
@@ -99,7 +83,7 @@ public class EjemploTema extends BaseTopicWindow {
         instruccion.getStyleClass().add("demo-instruction");
         instruccion.setWrapText(true);
 
-        // ── Fila de inputs ──────────────────────────────────
+        // Fila de inputs
         HBox filaInputs = new HBox(20);
         filaInputs.setAlignment(Pos.CENTER_LEFT);
 
@@ -128,7 +112,7 @@ public class EjemploTema extends BaseTopicWindow {
 
         filaInputs.getChildren().addAll(colFavorables, colTotales);
 
-        // ── Botón calcular ──────────────────────────────────
+        // Botón calcular
         Button btnCalcular = new Button("  Calcular P(A)  ");
         btnCalcular.getStyleClass().add("btn-calcular");
         btnCalcular.setOnAction(e -> calcularProbabilidad());
@@ -141,7 +125,7 @@ public class EjemploTema extends BaseTopicWindow {
         filaBotones.setAlignment(Pos.CENTER_LEFT);
         filaBotones.getChildren().addAll(btnCalcular, btnLimpiar);
 
-        // ── Box de resultado ────────────────────────────────
+        // Box de resultado
         VBox resultBox = new VBox(8);
         resultBox.getStyleClass().add("result-box");
         resultBox.setPadding(new Insets(14, 18, 14, 18));
@@ -171,7 +155,7 @@ public class EjemploTema extends BaseTopicWindow {
         // Guardar referencia al resultBox para mostrarlo tras calcular
         btnCalcular.setUserData(resultBox);
 
-        // ── Ensamblar todo ──────────────────────────────────
+        // Ensamblar todo
         demo.getChildren().addAll(
                 instruccion,
                 filaInputs,
@@ -183,10 +167,7 @@ public class EjemploTema extends BaseTopicWindow {
         return demo;
     }
 
-
-    // ═══════════════════════════════════════════════════════
-    //  LÓGICA DE CÁLCULO  —  Aquí va la matemática real
-    // ═══════════════════════════════════════════════════════
+    //  LÓGICA DE CÁLCULO
 
     /**
      * Calcula P(A) = casos_favorables / casos_totales.
@@ -198,7 +179,7 @@ public class EjemploTema extends BaseTopicWindow {
         ocultarResultados();
 
         try {
-            // ── Leer y validar entradas ───────────────────────
+            // Leer y validar entradas
             String txtF = txtFavorables.getText().trim();
             String txtT = txtTotales.getText().trim();
 
@@ -210,7 +191,7 @@ public class EjemploTema extends BaseTopicWindow {
             int favorables = Integer.parseInt(txtF);
             int totales    = Integer.parseInt(txtT);
 
-            // ── Validaciones de dominio ────────────────────────
+            // Validaciones de dominio
             if (favorables < 0 || totales < 0) {
                 mostrarError("Los valores no pueden ser negativos.");
                 return;
@@ -224,13 +205,13 @@ public class EjemploTema extends BaseTopicWindow {
                 return;
             }
 
-            // ── Cálculo ────────────────────────────────────────
+            // Cálculo
             double probabilidad = (double) favorables / totales;
             double porcentaje   = probabilidad * 100;
             int    mcd          = calcularMCD(favorables, totales);
             String fraccion     = (favorables / mcd) + " / " + (totales / mcd);
 
-            // ── Mostrar resultado ──────────────────────────────
+            // Mostrar resultado
             // Buscar y mostrar el result box (referencia guardada en UserData del botón)
             // Aquí simplemente lo actualizamos y lo hacemos visible:
             lblResultadoDecimal.setText(String.format("P(A)  =  %.4f", probabilidad));

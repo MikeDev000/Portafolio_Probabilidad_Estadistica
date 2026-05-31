@@ -16,26 +16,23 @@ import java.util.Locale;
 import java.util.ResourceBundle;
 
 public class MainController implements Initializable {
-    // ── Labels del Dashboard ─────────────────────────────────────
-    @FXML private Label lblNombreAlumno;   // Nombre en la tarjeta de bienvenida
-    @FXML private Label lblGrupoAlumno;    // Grupo en la tarjeta de bienvenida
-    @FXML private Label lblSemestre;       // Semestre/periodo
-    @FXML private Label lblFecha;          // Fecha actual
-    @FXML private Label lblTotalTemas;     // Contador de temas cubiertos
+    // Labels del Dashboard
+    @FXML private Label lblNombreAlumno;
+    @FXML private Label lblGrupoAlumno;
+    @FXML private Label lblSemestre;
+    @FXML private Label lblFecha;
+    @FXML private Label lblTotalTemas;
 
-    // ── Labels del footer del sidebar ───
+    // Labels del footer del sidebar
     @FXML private Label lblNombreSidebar;
     @FXML private Label lblGrupoSidebar;
 
-    // ── Botones del menú lateral ───
+    // Botones del menú lateral
     @FXML private Button btnInicio;
     @FXML private Button btnTema1;
     @FXML private Button btnTema2;
 
-    // ── Paso 2/3: Declara aquí el botón de cada nuevo tema ───────
-    // @FXML private Button btnTema2;
-
-    // inicialización:
+    // inicialización
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         lblNombreAlumno.setText(MainApp.NOMBRE_ALUMNO);
@@ -81,7 +78,7 @@ public class MainController implements Initializable {
      */
 
     private void setActiveButton(Button activeButton) {
-        Button[] allButtons = { btnInicio, btnTema1 /* ,btntema2, etc*/};
+        Button[] allButtons = { btnInicio, btnTema1};
 
         for (Button btn : allButtons) {
             btn.getStyleClass().remove("nav-button-active");
