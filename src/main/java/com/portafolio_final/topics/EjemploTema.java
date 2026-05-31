@@ -23,7 +23,7 @@ public class EjemploTema extends BaseTopicWindow {
 
     @Override
     public String getTitulo() {
-        return "Tema 1 — Probabilidad Clásica";
+        return "Tema x — Probabilidad Clásica";
     }
 
     @Override

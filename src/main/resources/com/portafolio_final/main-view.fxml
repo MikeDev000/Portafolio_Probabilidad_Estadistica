@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <!--
   ╔══════════════════════════════════════════════════════════════╗
   ║  main-view.fxml  —  Layout del Dashboard principal           ║
@@ -12,57 +13,47 @@
   ╚══════════════════════════════════════════════════════════════╝
 -->
 
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.layout.Region?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Separator?>
-<?import javafx.scene.control.ScrollPane?>
-<?import javafx.geometry.Insets?>
-<?import org.kordamp.ikonli.javafx.FontIcon?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import org.kordamp.ikonli.javafx.*?>
 
-<HBox xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="com.portafolio_final.controller.MainController"
-      spacing="0" minHeight="580">
+<HBox minHeight="580" spacing="0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17.0.12" fx:controller="com.portafolio_final.controller.MainController">
 
     <!-- ╔══════════════════════════════════════╗ -->
     <!-- ║           SIDEBAR IZQUIERDO          ║ -->
     <!-- ╚══════════════════════════════════════╝ -->
-    <VBox styleClass="sidebar" prefWidth="262" minWidth="262" maxWidth="262">
+    <VBox maxWidth="262" minWidth="262" prefWidth="262" styleClass="sidebar">
 
         <!-- Cabecera: Logo + nombre de la materia -->
-        <VBox styleClass="sidebar-header" alignment="CENTER" spacing="5">
-            <padding><Insets top="28" bottom="22" left="20" right="20"/></padding>
-            <FontIcon iconLiteral="fas-chart-pie" iconSize="38" iconColor="#6c63ff"/>
-            <Label text="Prob &amp; Estadística" styleClass="sidebar-title"/>
-            <Label text="Conceptos clave" styleClass="sidebar-subtitle"/>
+        <VBox alignment="CENTER" spacing="5" styleClass="sidebar-header">
+            <padding><Insets bottom="22" left="20" right="20" top="28" /></padding>
+            <FontIcon iconColor="#6c63ff" iconLiteral="fas-chart-pie" iconSize="38" />
+            <Label styleClass="sidebar-title" text="Prob &amp; Estadística" />
+            <Label styleClass="sidebar-subtitle" text="Conceptos clave" />
         </VBox>
 
-        <Separator styleClass="sidebar-separator"/>
+        <Separator styleClass="sidebar-separator" />
 
         <!-- ── Sección GENERAL ──────────────────────────── -->
-        <VBox styleClass="nav-section" spacing="3">
-            <padding><Insets top="16" bottom="6" left="14" right="14"/></padding>
-            <Label text="GENERAL" styleClass="nav-section-label"/>
+        <VBox spacing="3" styleClass="nav-section">
+            <padding><Insets bottom="6" left="14" right="14" top="16" /></padding>
+            <Label styleClass="nav-section-label" text="GENERAL" />
 
-            <Button fx:id="btnInicio" styleClass="nav-button"
-                    maxWidth="Infinity" onAction="#mostrarInicio">
+            <Button fx:id="btnInicio" maxWidth="Infinity" onAction="#mostrarInicio" styleClass="nav-button">
                 <graphic>
-                    <HBox spacing="10" alignment="CENTER_LEFT">
-                        <FontIcon iconLiteral="fas-home" iconSize="15" iconColor="#8b8fa8"/>
-                        <Label text="Inicio" mouseTransparent="true"/>
+                    <HBox alignment="CENTER_LEFT" spacing="10">
+                        <FontIcon iconColor="#8b8fa8" iconLiteral="fas-home" iconSize="15" />
+                        <Label mouseTransparent="true" text="Inicio" />
                     </HBox>
                 </graphic>
             </Button>
         </VBox>
 
         <!-- ── Sección TEMAS ────────────────────────────── -->
-        <VBox styleClass="nav-section" spacing="3">
-            <padding><Insets top="6" bottom="6" left="14" right="14"/></padding>
-            <Label text="TEMAS" styleClass="nav-section-label"/>
+        <VBox spacing="3" styleClass="nav-section">
+            <padding><Insets bottom="6" left="14" right="14" top="6" /></padding>
+            <Label styleClass="nav-section-label" text="TEMAS" />
 
             <!-- ╔══════════════════════════════════════════════╗
                  ║  ZONA DE TEMAS  ←  Agrega tus botones aquí  ║
@@ -70,52 +61,59 @@
                  ╚══════════════════════════════════════════════╝ -->
 
             <!-- TEMA 1: Probabilidad Clásica (ejemplo incluido) -->
-            <Button fx:id="btnTema1" styleClass="nav-button"
-                    maxWidth="Infinity" onAction="#abrirTema1">
+            <Button fx:id="btnTema1" maxWidth="Infinity" onAction="#abrirTema1" styleClass="nav-button">
                 <graphic>
-                    <HBox spacing="10" alignment="CENTER_LEFT">
-                        <FontIcon iconLiteral="fas-dice" iconSize="15" iconColor="#8b8fa8"/>
-                        <Label text="Prob. Clásica" mouseTransparent="true"/>
+                    <HBox alignment="CENTER_LEFT" spacing="10">
+                        <FontIcon iconColor="#8b8fa8" iconLiteral="fas-dice" iconSize="15" />
+                        <Label mouseTransparent="true" text="Prob. Clásica" />
                     </HBox>
                 </graphic>
             </Button>
 
             <!-- TEMA 2 (plantilla comentada — descomenta y personaliza) -->
-            <Button fx:id="btnTema2" styleClass="nav-button"
-                    maxWidth="Infinity" onAction="#abrirTema2">
+            <Button fx:id="btnTema2" maxWidth="Infinity" onAction="#abrirTema2" styleClass="nav-button">
                 <graphic>
-                    <HBox spacing="10" alignment="CENTER_LEFT">
-                        <FontIcon iconLiteral="fas-random" iconSize="15" iconColor="#8b8fa8"/>
-                        <Label text="P1 Barajas" mouseTransparent="true"/>
+                    <HBox alignment="CENTER_LEFT" spacing="10">
+                        <FontIcon iconColor="#8b8fa8" iconLiteral="fas-random" iconSize="15" />
+                        <Label mouseTransparent="true" text="P1 Barajas" />
                     </HBox>
                 </graphic>
             </Button>
 
 
             <!-- TEMA 3: Regla Aditiva -->
-            <Button fx:id="btnTema3" styleClass="nav-button"
-                    maxWidth="Infinity" onAction="#abrirTema3">
+            <Button fx:id="btnTema3" maxWidth="Infinity" onAction="#abrirTema3" styleClass="nav-button">
                 <graphic>
-                    <HBox spacing="10" alignment="CENTER_LEFT">
-                        <FontIcon iconLiteral="fas-plus-circle" iconSize="15" iconColor="#8b8fa8"/>
-                        <Label text="Regla Aditiva" mouseTransparent="true"/>
+                    <HBox alignment="CENTER_LEFT" spacing="10">
+                        <FontIcon iconColor="#8b8fa8" iconLiteral="fas-plus-circle" iconSize="15" />
+                        <Label mouseTransparent="true" text="Regla Aditiva" />
                     </HBox>
                 </graphic>
             </Button>
 
+            <!-- NUEVOS TEMAS -->
+            <Button fx:id="btnTema4" maxWidth="Infinity" onAction="#abrirTema4" styleClass="nav-button"><graphic><HBox alignment="CENTER_LEFT" spacing="10"><FontIcon iconColor="#8b8fa8" iconLiteral="fas-project-diagram" iconSize="15" /><Label mouseTransparent="true" text="Tipos Eventos" /></HBox></graphic></Button>
+            <Button fx:id="btnTema5" maxWidth="Infinity" onAction="#abrirTema5" styleClass="nav-button"><graphic><HBox alignment="CENTER_LEFT" spacing="10"><FontIcon iconColor="#8b8fa8" iconLiteral="fas-filter" iconSize="15" /><Label mouseTransparent="true" text="Prob. Condic." /></HBox></graphic></Button>
+            <Button fx:id="btnTema6" maxWidth="Infinity" onAction="#abrirTema6" styleClass="nav-button"><graphic><HBox alignment="CENTER_LEFT" spacing="10"><FontIcon iconColor="#8b8fa8" iconLiteral="fas-times" iconSize="15" /><Label mouseTransparent="true" text="Regla Mult." /></HBox></graphic></Button>
+            <Button fx:id="btnTema7" maxWidth="Infinity" onAction="#abrirTema7" styleClass="nav-button"><graphic><HBox alignment="CENTER_LEFT" spacing="10"><FontIcon iconColor="#8b8fa8" iconLiteral="fas-layer-group" iconSize="15" /><Label mouseTransparent="true" text="Cartas (3ev)" /></HBox></graphic></Button>
+            <Button fx:id="btnTema8" maxWidth="Infinity" onAction="#abrirTema8" styleClass="nav-button"><graphic><HBox alignment="CENTER_LEFT" spacing="10"><FontIcon iconColor="#8b8fa8" iconLiteral="fas-sitemap" iconSize="15" /><Label mouseTransparent="true" text="Prob. Total" /></HBox></graphic></Button>
+            <Button fx:id="btnTema9" maxWidth="Infinity" onAction="#abrirTema9" styleClass="nav-button"><graphic><HBox alignment="CENTER_LEFT" spacing="10"><FontIcon iconColor="#8b8fa8" iconLiteral="fas-balance-scale" iconSize="15" /><Label mouseTransparent="true" text="T. Bayes" /></HBox></graphic></Button>
+            <Button fx:id="btnTema10" maxWidth="Infinity" onAction="#abrirTema10" styleClass="nav-button"><graphic><HBox alignment="CENTER_LEFT" spacing="10"><FontIcon iconColor="#8b8fa8" iconLiteral="fas-chart-line" iconSize="15" /><Label mouseTransparent="true" text="Tendencia" /></HBox></graphic></Button>
+            <Button fx:id="btnTema11" maxWidth="Infinity" onAction="#abrirTema11" styleClass="nav-button"><graphic><HBox alignment="CENTER_LEFT" spacing="10"><FontIcon iconColor="#8b8fa8" iconLiteral="fas-chart-area" iconSize="15" /><Label mouseTransparent="true" text="Dispersión" /></HBox></graphic></Button>
+
         </VBox>
 
         <!-- Separador flexible para empujar el footer hacia abajo -->
-        <Region VBox.vgrow="ALWAYS"/>
+        <Region VBox.vgrow="ALWAYS" />
 
         <!-- Footer: datos del alumno -->
-        <VBox styleClass="sidebar-footer" spacing="0">
-            <padding><Insets top="0" bottom="20" left="20" right="20"/></padding>
-            <Separator styleClass="sidebar-separator" style="-fx-padding: 0 0 12 0;"/>
+        <VBox spacing="0" styleClass="sidebar-footer">
+            <padding><Insets bottom="20" left="20" right="20" top="0" /></padding>
+            <Separator style="-fx-padding: 0 0 12 0;" styleClass="sidebar-separator" />
             <VBox spacing="3" style="-fx-padding: 14 0 0 0;">
-                <Label text="Desarrollado por" styleClass="footer-label"/>
-                <Label fx:id="lblNombreSidebar" text="..." styleClass="footer-value"/>
-                <Label fx:id="lblGrupoSidebar"  text="..." styleClass="footer-group"/>
+                <Label styleClass="footer-label" text="Desarrollado por" />
+                <Label fx:id="lblNombreSidebar" styleClass="footer-value" text="..." />
+                <Label fx:id="lblGrupoSidebar" styleClass="footer-group" text="..." />
             </VBox>
         </VBox>
 
@@ -126,119 +124,159 @@
     <!-- ║         ÁREA DE CONTENIDO            ║ -->
     <!-- ╚══════════════════════════════════════╝ -->
     <ScrollPane fitToWidth="true" styleClass="content-scroll" HBox.hgrow="ALWAYS">
-        <VBox styleClass="content-area" spacing="22">
-            <padding><Insets top="36" bottom="40" left="40" right="40"/></padding>
+        <VBox spacing="22" styleClass="content-area">
+            <padding><Insets bottom="40" left="40" right="40" top="36" /></padding>
 
             <!-- ── Encabezado de página ─────────────────── -->
             <VBox spacing="6">
-                <Label text="Dashboard" styleClass="page-title"/>
-                <Label text="Todos los temas de probabilidad y estadística al alcance de un click."
-                       styleClass="page-subtitle" wrapText="true"/>
+                <Label styleClass="page-title" text="Dashboard" />
+                <Label styleClass="page-subtitle" text="Todos los temas de probabilidad y estadística al alcance de un click." wrapText="true" />
             </VBox>
 
             <!-- ── Tarjeta de bienvenida ────────────────── -->
-            <VBox styleClass="welcome-card" spacing="14">
-                <HBox spacing="16" alignment="CENTER_LEFT">
-                    <FontIcon iconLiteral="fas-graduation-cap" iconSize="30" iconColor="#6c63ff"/>
+            <VBox spacing="14" styleClass="welcome-card">
+                <HBox alignment="CENTER_LEFT" spacing="16">
+                    <FontIcon iconColor="#6c63ff" iconLiteral="fas-graduation-cap" iconSize="30" />
                     <VBox spacing="3">
-                        <Label text="Bienvenido capa 8!" styleClass="card-title"/>
-                        <Label fx:id="lblFecha" text="..." styleClass="card-date"/>
+                        <Label styleClass="card-title" text="Bienvenido capa 8!" />
+                        <Label fx:id="lblFecha" styleClass="card-date" text="..." />
                     </VBox>
                 </HBox>
 
-                <Separator/>
+                <Separator />
 
-                <Label styleClass="welcome-description" wrapText="true"
-                       text="Esta aplicación centraliza los conceptos clave aprendidos durante el curso de Probabilidad y Estadística. Utiliza el menú lateral para navegar entre los diferentes temas y acceder a los ejemplos interactivos. Cada sección presenta la definición del concepto, su fórmula o código de aplicación, y una demostración funcional donde puedes ingresar valores reales."/>
+                <Label styleClass="welcome-description" text="Esta aplicación centraliza los conceptos clave aprendidos durante el curso de Probabilidad y Estadística. Utiliza el menú lateral para navegar entre los diferentes temas y acceder a los ejemplos interactivos. Cada sección presenta la definición del concepto, su fórmula o código de aplicación, y una demostración funcional donde puedes ingresar valores reales." wrapText="true" />
 
                 <!-- Chips de información del alumno -->
                 <HBox spacing="14">
-                    <VBox styleClass="info-chip" spacing="3">
-                        <Label text="ALUMNO" styleClass="chip-label"/>
-                        <Label fx:id="lblNombreAlumno" text="..." styleClass="chip-value"/>
+                    <VBox spacing="3" styleClass="info-chip">
+                        <Label styleClass="chip-label" text="ALUMNO" />
+                        <Label fx:id="lblNombreAlumno" styleClass="chip-value" text="..." />
                     </VBox>
-                    <VBox styleClass="info-chip" spacing="3">
-                        <Label text="GRUPO" styleClass="chip-label"/>
-                        <Label fx:id="lblGrupoAlumno" text="..." styleClass="chip-value"/>
+                    <VBox spacing="3" styleClass="info-chip">
+                        <Label styleClass="chip-label" text="GRUPO" />
+                        <Label fx:id="lblGrupoAlumno" styleClass="chip-value" text="..." />
                     </VBox>
-                    <VBox styleClass="info-chip" spacing="3">
-                        <Label text="SEMESTRE" styleClass="chip-label"/>
-                        <Label fx:id="lblSemestre" text="..." styleClass="chip-value"/>
+                    <VBox spacing="3" styleClass="info-chip">
+                        <Label styleClass="chip-label" text="SEMESTRE" />
+                        <Label fx:id="lblSemestre" styleClass="chip-value" text="..." />
                     </VBox>
-                    <VBox styleClass="info-chip-accent" spacing="3">
-                        <Label text="TEMAS CUBIERTOS" styleClass="chip-label"/>
-                        <Label fx:id="lblTotalTemas" text="1" styleClass="chip-value-accent"/>
+                    <VBox spacing="3" styleClass="info-chip-accent">
+                        <Label styleClass="chip-label" text="TEMAS CUBIERTOS" />
+                        <Label fx:id="lblTotalTemas" styleClass="chip-value-accent" text="1" />
                     </VBox>
                 </HBox>
             </VBox>
 
             <!-- ── Sección: Grid de temas ───────────────── -->
             <VBox spacing="14">
-                <Label text="Temas del Portafolio" styleClass="section-title"/>
+                <Label styleClass="section-title" text="Temas del Portafolio" />
 
                 <GridPane hgap="16" vgap="16">
 
                     <!-- Tarjeta Tema 1 (clickeable) -->
-                    <VBox GridPane.columnIndex="0" GridPane.rowIndex="0"
-                          styleClass="topic-card" spacing="10"
-                          onMouseClicked="#abrirTema1">
-                        <HBox spacing="12" alignment="CENTER_LEFT">
-                            <FontIcon iconLiteral="fas-dice" iconSize="20" iconColor="#6c63ff"/>
-                            <Label text="Probabilidad Clásica" styleClass="topic-card-title"/>
+                    <VBox onMouseClicked="#abrirTema1" spacing="10" styleClass="topic-card" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                        <HBox alignment="CENTER_LEFT" spacing="12">
+                            <FontIcon iconColor="#6c63ff" iconLiteral="fas-dice" iconSize="20" />
+                            <Label styleClass="topic-card-title" text="Probabilidad Clásica" />
                         </HBox>
-                        <Label wrapText="true" styleClass="topic-card-desc"
-                               text="Conceptos fundamentales de la probabilidad: espacio muestral, eventos y la regla de Laplace."/>
+                        <Label styleClass="topic-card-desc" text="Conceptos fundamentales de la probabilidad: espacio muestral, eventos y la regla de Laplace." wrapText="true" />
                         <HBox alignment="CENTER_RIGHT">
-                            <Label text="Abrir  →" styleClass="topic-card-link"/>
+                            <Label styleClass="topic-card-link" text="Abrir  →" />
                         </HBox>
                     </VBox>
 
                     <!-- Tarjeta Tema 2 (clickeable) -->
-                    <VBox GridPane.columnIndex="1" GridPane.rowIndex="0"
-                          styleClass="topic-card" spacing="10"
-                          onMouseClicked="#abrirTema2">
-                        <HBox spacing="12" alignment="CENTER_LEFT">
-                            <FontIcon iconLiteral="fas-random" iconSize="20" iconColor="#6c63ff"/>
-                            <Label text="Baraja Española" styleClass="topic-card-title"/>
+                    <VBox onMouseClicked="#abrirTema2" spacing="10" styleClass="topic-card" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                        <HBox alignment="CENTER_LEFT" spacing="12">
+                            <FontIcon iconColor="#6c63ff" iconLiteral="fas-random" iconSize="20" />
+                            <Label styleClass="topic-card-title" text="Baraja Española" />
                         </HBox>
-                        <Label wrapText="true" styleClass="topic-card-desc"
-                               text="Programa #1. Devuelve una carta aleatoriamente del mazo de cartas Españolas."/>
+                        <Label styleClass="topic-card-desc" text="Programa #1. Devuelve una carta aleatoriamente del mazo de cartas Españolas." wrapText="true" />
                         <HBox alignment="CENTER_RIGHT">
-                            <Label text="Abrir  →" styleClass="topic-card-link"/>
+                            <Label styleClass="topic-card-link" text="Abrir  →" />
                         </HBox>
                     </VBox>
 
                     <!-- Tarjeta Tema 3 (clickeable) -->
-                    <VBox GridPane.columnIndex="0" GridPane.rowIndex="1"
-                          styleClass="topic-card" spacing="10"
-                          onMouseClicked="#abrirTema3">
-                        <HBox spacing="12" alignment="CENTER_LEFT">
-                            <FontIcon iconLiteral="fas-plus-circle" iconSize="20" iconColor="#6c63ff"/>
-                            <Label text="Regla Aditiva" styleClass="topic-card-title"/>
+                    <VBox onMouseClicked="#abrirTema3" spacing="10" styleClass="topic-card" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                        <HBox alignment="CENTER_LEFT" spacing="12">
+                            <FontIcon iconColor="#6c63ff" iconLiteral="fas-plus-circle" iconSize="20" />
+                            <Label styleClass="topic-card-title" text="Regla Aditiva" />
                         </HBox>
-                        <Label wrapText="true" styleClass="topic-card-desc"
-                               text="Cálculo de la probabilidad de la unión de 2, 3 o 4 eventos mediante el principio de inclusión-exclusión."/>
+                        <Label styleClass="topic-card-desc" text="Cálculo de la probabilidad de la unión de 2, 3 o 4 eventos mediante el principio de inclusión-exclusión." wrapText="true" />
                         <HBox alignment="CENTER_RIGHT">
-                            <Label text="Abrir  →" styleClass="topic-card-link"/>
+                            <Label styleClass="topic-card-link" text="Abrir  →" />
                         </HBox>
                     </VBox>
 
+                    <!-- Tarjeta Tema 4 -->
+                    <VBox onMouseClicked="#abrirTema4" spacing="10" styleClass="topic-card" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                        <HBox alignment="CENTER_LEFT" spacing="12"><FontIcon iconColor="#6c63ff" iconLiteral="fas-project-diagram" iconSize="20" /><Label styleClass="topic-card-title" text="Tipos de Eventos" /></HBox>
+                        <Label styleClass="topic-card-desc" text="Identificación y cálculo de eventos compuestos, complementarios y disjuntos." wrapText="true" />
+                    </VBox>
+
+                    <!-- Tarjeta Tema 5 -->
+                    <VBox onMouseClicked="#abrirTema5" spacing="10" styleClass="topic-card" GridPane.columnIndex="0" GridPane.rowIndex="2">
+                        <HBox alignment="CENTER_LEFT" spacing="12"><FontIcon iconColor="#6c63ff" iconLiteral="fas-filter" iconSize="20" /><Label styleClass="topic-card-title" text="Prob. Condicional" /></HBox>
+                        <Label styleClass="topic-card-desc" text="Cálculo de probabilidad a partir de tablas de contingencia y eventos condicionados." wrapText="true" />
+                    </VBox>
+
+                    <!-- Tarjeta Tema 6 -->
+                    <VBox onMouseClicked="#abrirTema6" spacing="10" styleClass="topic-card" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                        <HBox alignment="CENTER_LEFT" spacing="12"><FontIcon iconColor="#6c63ff" iconLiteral="fas-times" iconSize="20" /><Label styleClass="topic-card-title" text="Regla Multiplicativa" /></HBox>
+                        <Label styleClass="topic-card-desc" text="Extracción de elementos con o sin reemplazo (eventos independientes y dependientes)." wrapText="true" />
+                    </VBox>
+
+                    <!-- Tarjeta Tema 7 -->
+                    <VBox onMouseClicked="#abrirTema7" spacing="10" styleClass="topic-card" GridPane.columnIndex="0" GridPane.rowIndex="3">
+                        <HBox alignment="CENTER_LEFT" spacing="12"><FontIcon iconColor="#6c63ff" iconLiteral="fas-layer-group" iconSize="20" /><Label styleClass="topic-card-title" text="Juego 3 Eventos" /></HBox>
+                        <Label styleClass="topic-card-desc" text="Aplicación de la regla multiplicativa en cascada para 3 extracciones de cartas." wrapText="true" />
+                    </VBox>
+
+                    <!-- Tarjeta Tema 8 -->
+                    <VBox onMouseClicked="#abrirTema8" spacing="10" styleClass="topic-card" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                        <HBox alignment="CENTER_LEFT" spacing="12"><FontIcon iconColor="#6c63ff" iconLiteral="fas-sitemap" iconSize="20" /><Label styleClass="topic-card-title" text="Probabilidad Total" /></HBox>
+                        <Label styleClass="topic-card-desc" text="Análisis de escenarios múltiples y cálculo de la probabilidad total de un evento." wrapText="true" />
+                    </VBox>
+
+                    <!-- Tarjeta Tema 9 -->
+                    <VBox onMouseClicked="#abrirTema9" spacing="10" styleClass="topic-card" GridPane.columnIndex="0" GridPane.rowIndex="4">
+                        <HBox alignment="CENTER_LEFT" spacing="12"><FontIcon iconColor="#6c63ff" iconLiteral="fas-balance-scale" iconSize="20" /><Label styleClass="topic-card-title" text="Teorema de Bayes" /></HBox>
+                        <Label styleClass="topic-card-desc" text="Reversión de condicionalidad: cálculo de la probabilidad a posteriori de una causa." wrapText="true" />
+                    </VBox>
+
+                    <!-- Tarjeta Tema 10 -->
+                    <VBox onMouseClicked="#abrirTema10" spacing="10" styleClass="topic-card" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                        <HBox alignment="CENTER_LEFT" spacing="12"><FontIcon iconColor="#6c63ff" iconLiteral="fas-chart-line" iconSize="20" /><Label styleClass="topic-card-title" text="Tendencia Central" /></HBox>
+                        <Label styleClass="topic-card-desc" text="Cálculo automático de la Media, Mediana y Moda a partir de un conjunto de datos." wrapText="true" />
+                    </VBox>
+
+                    <!-- Tarjeta Tema 11 -->
+                    <VBox onMouseClicked="#abrirTema11" spacing="10" styleClass="topic-card" GridPane.columnIndex="0" GridPane.rowIndex="5">
+                        <HBox alignment="CENTER_LEFT" spacing="12"><FontIcon iconColor="#6c63ff" iconLiteral="fas-chart-area" iconSize="20" /><Label styleClass="topic-card-title" text="Dispersión" /></HBox>
+                        <Label styleClass="topic-card-desc" text="Cálculo de la Varianza y Desviación Estándar poblacional y muestral." wrapText="true" />
+                    </VBox>
+
                     <!-- Tarjeta Placeholder -->
-                    <VBox GridPane.columnIndex="1" GridPane.rowIndex="1"
-                          styleClass="topic-card-placeholder" spacing="10">
-                        <HBox spacing="12" alignment="CENTER_LEFT">
-                            <FontIcon iconLiteral="fas-plus-circle" iconSize="20" iconColor="#d1d5db"/>
-                            <Label text="Próximo Tema..." styleClass="topic-card-title-muted"/>
-                        </HBox>
-                        <Label wrapText="true" styleClass="topic-card-desc-muted"
-                               text="Aquí aparecerá el siguiente tema que agregues al portafolio."/>
+                    <VBox spacing="10" styleClass="topic-card-placeholder" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                        <HBox alignment="CENTER_LEFT" spacing="12"><FontIcon iconColor="#d1d5db" iconLiteral="fas-plus-circle" iconSize="20" /><Label styleClass="topic-card-title-muted" text="Fin del Portafolio" /></HBox>
+                        <Label styleClass="topic-card-desc-muted" text="Esperando a agregar más temas..." wrapText="true" />
                     </VBox>
 
                     <!-- Restricción de columnas: 50% cada una -->
                     <columnConstraints>
-                        <ColumnConstraints percentWidth="50"/>
-                        <ColumnConstraints percentWidth="50"/>
+                        <ColumnConstraints percentWidth="50" />
+                        <ColumnConstraints percentWidth="50" />
                     </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+               </rowConstraints>
 
                 </GridPane>
             </VBox><!-- fin sección temas -->

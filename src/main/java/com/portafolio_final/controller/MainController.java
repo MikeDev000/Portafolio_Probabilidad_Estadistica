@@ -4,6 +4,14 @@ import com.portafolio_final.MainApp;
 import com.portafolio_final.topics.BarajasAleatoridad;
 import com.portafolio_final.topics.EjemploTema;
 import com.portafolio_final.topics.ReglaAditiva;
+import com.portafolio_final.topics.EventosTipos;
+import com.portafolio_final.topics.ProbCondicional;
+import com.portafolio_final.topics.ReglaMultiplicativa;
+import com.portafolio_final.topics.JuegoCartasTres;
+import com.portafolio_final.topics.ProbabilidadTotal;
+import com.portafolio_final.topics.TeoremaBayes;
+import com.portafolio_final.topics.TendenciaCentral;
+import com.portafolio_final.topics.Dispersion;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -32,6 +40,14 @@ public class MainController implements Initializable {
     @FXML private Button btnTema1;
     @FXML private Button btnTema2;
     @FXML private Button btnTema3;
+    @FXML private Button btnTema4;
+    @FXML private Button btnTema5;
+    @FXML private Button btnTema6;
+    @FXML private Button btnTema7;
+    @FXML private Button btnTema8;
+    @FXML private Button btnTema9;
+    @FXML private Button btnTema10;
+    @FXML private Button btnTema11;
 
     // inicialización
     @Override
@@ -46,7 +62,7 @@ public class MainController implements Initializable {
         lblFecha.setText(LocalDate.now().format(fmt));
 
         // Actualizar conforme los temas q se vayan agregando
-        lblTotalTemas.setText("3");
+        lblTotalTemas.setText("11");
 
         setActiveButton(btnInicio);
     }
@@ -78,10 +94,27 @@ public class MainController implements Initializable {
         new ReglaAditiva().show();
      }
 
+     @FXML
+     private void abrirTema4() { setActiveButton(btnTema4); new EventosTipos().show(); }
+     @FXML
+     private void abrirTema5() { setActiveButton(btnTema5); new ProbCondicional().show(); }
+     @FXML
+     private void abrirTema6() { setActiveButton(btnTema6); new ReglaMultiplicativa().show(); }
+     @FXML
+     private void abrirTema7() { setActiveButton(btnTema7); new JuegoCartasTres().show(); }
+     @FXML
+     private void abrirTema8() { setActiveButton(btnTema8); new ProbabilidadTotal().show(); }
+     @FXML
+     private void abrirTema9() { setActiveButton(btnTema9); new TeoremaBayes().show(); }
+     @FXML
+     private void abrirTema10() { setActiveButton(btnTema10); new TendenciaCentral().show(); }
+     @FXML
+     private void abrirTema11() { setActiveButton(btnTema11); new Dispersion().show(); }
+
     // @param activeButton Botón que debe marcarse como activo
 
     private void setActiveButton(Button activeButton) {
-        Button[] allButtons = { btnInicio, btnTema1, btnTema2, btnTema3};
+        Button[] allButtons = { btnInicio, btnTema1, btnTema2, btnTema3, btnTema4, btnTema5, btnTema6, btnTema7, btnTema8, btnTema9, btnTema10, btnTema11};
 
         for (Button btn : allButtons) {
             btn.getStyleClass().remove("nav-button-active");
@@ -90,5 +123,4 @@ public class MainController implements Initializable {
             activeButton.getStyleClass().add("nav-button-active");
         }
     }
-
 }

@@ -22,7 +22,7 @@ public class ReglaAditiva extends BaseTopicWindow {
 
     @Override
     public String getTitulo() {
-        return "Tema 3 — Regla Aditiva";
+        return "Programa #3 — Regla Aditiva";
     }
 
     @Override
