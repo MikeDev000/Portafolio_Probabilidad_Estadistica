@@ -92,17 +92,16 @@
             </Button>
 
 
-            <!-- TEMA 3 (plantilla comentada)
+            <!-- TEMA 3: Regla Aditiva -->
             <Button fx:id="btnTema3" styleClass="nav-button"
                     maxWidth="Infinity" onAction="#abrirTema3">
                 <graphic>
                     <HBox spacing="10" alignment="CENTER_LEFT">
-                        <FontIcon iconLiteral="fas-chart-bar" iconSize="15" iconColor="#8b8fa8"/>
-                        <Label text="Estadística Desc." mouseTransparent="true"/>
+                        <FontIcon iconLiteral="fas-plus-circle" iconSize="15" iconColor="#8b8fa8"/>
+                        <Label text="Regla Aditiva" mouseTransparent="true"/>
                     </HBox>
                 </graphic>
             </Button>
-            -->
 
         </VBox>
 
@@ -209,15 +208,30 @@
                         </HBox>
                     </VBox>
 
-                    <!-- Tarjeta Placeholder (aparece hasta que agregues el Tema 2) -->
+                    <!-- Tarjeta Tema 3 (clickeable) -->
                     <VBox GridPane.columnIndex="0" GridPane.rowIndex="1"
+                          styleClass="topic-card" spacing="10"
+                          onMouseClicked="#abrirTema3">
+                        <HBox spacing="12" alignment="CENTER_LEFT">
+                            <FontIcon iconLiteral="fas-plus-circle" iconSize="20" iconColor="#6c63ff"/>
+                            <Label text="Regla Aditiva" styleClass="topic-card-title"/>
+                        </HBox>
+                        <Label wrapText="true" styleClass="topic-card-desc"
+                               text="Cálculo de la probabilidad de la unión de 2, 3 o 4 eventos mediante el principio de inclusión-exclusión."/>
+                        <HBox alignment="CENTER_RIGHT">
+                            <Label text="Abrir  →" styleClass="topic-card-link"/>
+                        </HBox>
+                    </VBox>
+
+                    <!-- Tarjeta Placeholder -->
+                    <VBox GridPane.columnIndex="1" GridPane.rowIndex="1"
                           styleClass="topic-card-placeholder" spacing="10">
                         <HBox spacing="12" alignment="CENTER_LEFT">
                             <FontIcon iconLiteral="fas-plus-circle" iconSize="20" iconColor="#d1d5db"/>
                             <Label text="Próximo Tema..." styleClass="topic-card-title-muted"/>
                         </HBox>
                         <Label wrapText="true" styleClass="topic-card-desc-muted"
-                               text="Aquí aparecerá el siguiente tema que agregues al portafolio siguiendo los 3 pasos del README."/>
+                               text="Aquí aparecerá el siguiente tema que agregues al portafolio."/>
                     </VBox>
 
                     <!-- Restricción de columnas: 50% cada una -->

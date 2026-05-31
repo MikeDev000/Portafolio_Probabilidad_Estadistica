@@ -3,7 +3,7 @@ package com.portafolio_final.controller;
 import com.portafolio_final.MainApp;
 import com.portafolio_final.topics.BarajasAleatoridad;
 import com.portafolio_final.topics.EjemploTema;
-import com.sun.tools.javac.Main;
+import com.portafolio_final.topics.ReglaAditiva;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -31,6 +31,7 @@ public class MainController implements Initializable {
     @FXML private Button btnInicio;
     @FXML private Button btnTema1;
     @FXML private Button btnTema2;
+    @FXML private Button btnTema3;
 
     // inicialización
     @Override
@@ -45,7 +46,7 @@ public class MainController implements Initializable {
         lblFecha.setText(LocalDate.now().format(fmt));
 
         // Actualizar conforme los temas q se vayan agregando
-        lblTotalTemas.setText("2");
+        lblTotalTemas.setText("3");
 
         setActiveButton(btnInicio);
     }
@@ -65,20 +66,22 @@ public class MainController implements Initializable {
         new EjemploTema().show();
     }
 
-    // agregar metodo nuevo por cada tema
      @FXML
      private void abrirTema2() {
          setActiveButton(btnTema2);
          new BarajasAleatoridad().show();
      }
 
-    /*
-    metodo utilitario: gestiona el boton activo
-    @param activeButton Botón que debe marcarse como activo
-     */
+     @FXML
+     private void abrirTema3() {
+        setActiveButton(btnTema3);
+        new ReglaAditiva().show();
+     }
+
+    // @param activeButton Botón que debe marcarse como activo
 
     private void setActiveButton(Button activeButton) {
-        Button[] allButtons = { btnInicio, btnTema1};
+        Button[] allButtons = { btnInicio, btnTema1, btnTema2, btnTema3};
 
         for (Button btn : allButtons) {
             btn.getStyleClass().remove("nav-button-active");
