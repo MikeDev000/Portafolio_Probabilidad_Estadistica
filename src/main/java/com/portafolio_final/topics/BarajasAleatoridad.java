@@ -21,7 +21,7 @@ public class BarajasAleatoridad extends BaseTopicWindow {
 
     @Override
     public String getTitulo() {
-        return "Programa #1 — Probabilidad de un evento";
+        return "Probabilidad de un evento";
     }
 
     @Override

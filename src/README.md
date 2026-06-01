@@ -1,4 +1,4 @@
-# 📊 Portafolio de Probabilidad y Estadística — Guía de Integración
+# Portafolio de Probabilidad y Estadística — Guía de Integración
 
 ## Estructura del Proyecto
 
@@ -25,7 +25,7 @@ src/
 
 ---
 
-## ✏️ Tus Datos Personales
+## Tus Datos Personales
 
 Edita las constantes al inicio de `MainApp.java`:
 ```java
@@ -36,7 +36,7 @@ public static final String SEMESTRE      = "2025-1";
 
 ---
 
-## ➕ Cómo Agregar un Nuevo Tema (3 pasos)
+## Cómo Agregar un Nuevo Tema (3 pasos)
 
 ### Paso 1 — Crear la clase del tema
 Crea `MiNuevoTemaWindow.java` en el paquete `topics/`, extendiendo `BaseTopicWindow`:
@@ -91,7 +91,7 @@ private void abrirTema2() {
 
 ---
 
-## 🎨 Íconos Disponibles (Ikonli FontAwesome 5)
+## Íconos Disponibles (Ikonli FontAwesome 5)
 
 | Código              | Descripción      |
 |---------------------|------------------|
@@ -110,7 +110,7 @@ private void abrirTema2() {
 
 ---
 
-## 📦 Dependencias requeridas en `pom.xml`
+## Dependencias requeridas en `pom.xml`
 
 ```xml
 <!-- BootstrapFX -->

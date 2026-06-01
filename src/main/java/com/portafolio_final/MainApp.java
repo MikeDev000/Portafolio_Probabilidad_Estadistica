@@ -13,7 +13,7 @@ public class MainApp extends Application {
     // datos
     public static final String NOMBRE_ALUMNO = "Miguel Angel Correa Martinez";
     public static final String GRUPO         = "2407";
-    public static final String SEMESTRE      = "2025-1";
+    public static final String SEMESTRE      = "4°";
     public static final String MATERIA       = "Probabilidad y Estadística";
 
     // Ventana
