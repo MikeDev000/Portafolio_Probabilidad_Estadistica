@@ -120,6 +120,38 @@
     -fx-font-size: 11px;
 }
 
+/* ── ScrollPane del Sidebar ─────────────────────────────────────── */
+.sidebar-scroll {
+    -fx-background: #1a1d2e;
+    -fx-background-color: #1a1d2e;
+    -fx-border-color: transparent;
+}
+
+.sidebar-scroll > .viewport {
+    -fx-background-color: transparent;
+}
+
+/* Barra de scroll discreta para el sidebar */
+.sidebar-scroll > .scroll-bar:vertical {
+    -fx-pref-width: 6px;
+    -fx-background-color: transparent;
+}
+
+.sidebar-scroll > .scroll-bar:vertical > .thumb {
+    -fx-background-color: #2d3150;
+    -fx-background-radius: 10;
+}
+
+.sidebar-scroll > .scroll-bar:vertical > .thumb:hover {
+    -fx-background-color: #3d426a;
+}
+
+.sidebar-scroll > .scroll-bar:vertical > .track,
+.sidebar-scroll > .scroll-bar:vertical > .increment-button,
+.sidebar-scroll > .scroll-bar:vertical > .decrement-button {
+    -fx-background-color: transparent;
+}
+
 
 /* ═══════════════════════════════════════════════════════════════════
    ÁREA DE CONTENIDO (Dashboard)

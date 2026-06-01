@@ -35,76 +35,77 @@
 
         <Separator styleClass="sidebar-separator" />
 
-        <!-- ── Sección GENERAL ──────────────────────────── -->
-        <VBox spacing="3" styleClass="nav-section">
-            <padding><Insets bottom="6" left="14" right="14" top="16" /></padding>
-            <Label styleClass="nav-section-label" text="GENERAL" />
+        <!-- Contenedor scrollable para los temas -->
+        <ScrollPane fitToWidth="true" hbarPolicy="NEVER" styleClass="sidebar-scroll" VBox.vgrow="ALWAYS">
+            <VBox>
+                <!-- ── Sección GENERAL ──────────────────────────── -->
+                <VBox spacing="3" styleClass="nav-section">
+                    <padding><Insets bottom="6" left="14" right="14" top="16" /></padding>
+                    <Label styleClass="nav-section-label" text="GENERAL" />
 
-            <Button fx:id="btnInicio" maxWidth="Infinity" onAction="#mostrarInicio" styleClass="nav-button">
-                <graphic>
-                    <HBox alignment="CENTER_LEFT" spacing="10">
-                        <FontIcon iconColor="#8b8fa8" iconLiteral="fas-home" iconSize="15" />
-                        <Label mouseTransparent="true" text="Inicio" />
-                    </HBox>
-                </graphic>
-            </Button>
-        </VBox>
+                    <Button fx:id="btnInicio" maxWidth="Infinity" onAction="#mostrarInicio" styleClass="nav-button">
+                        <graphic>
+                            <HBox alignment="CENTER_LEFT" spacing="10">
+                                <FontIcon iconColor="#8b8fa8" iconLiteral="fas-home" iconSize="15" />
+                                <Label mouseTransparent="true" text="Inicio" />
+                            </HBox>
+                        </graphic>
+                    </Button>
+                </VBox>
 
-        <!-- ── Sección TEMAS ────────────────────────────── -->
-        <VBox spacing="3" styleClass="nav-section">
-            <padding><Insets bottom="6" left="14" right="14" top="6" /></padding>
-            <Label styleClass="nav-section-label" text="TEMAS" />
+                <!-- ── Sección TEMAS ────────────────────────────── -->
+                <VBox spacing="3" styleClass="nav-section">
+                    <padding><Insets bottom="6" left="14" right="14" top="6" /></padding>
+                    <Label styleClass="nav-section-label" text="TEMAS" />
 
-            <!-- ╔══════════════════════════════════════════════╗
-                 ║  ZONA DE TEMAS  ←  Agrega tus botones aquí  ║
-                 ║  Duplica el bloque <Button> por cada tema    ║
-                 ╚══════════════════════════════════════════════╝ -->
+                    <!-- ╔══════════════════════════════════════════════╗
+                         ║  ZONA DE TEMAS  ←  Agrega tus botones aquí  ║
+                         ║  Duplica el bloque <Button> por cada tema    ║
+                         ╚══════════════════════════════════════════════╝ -->
 
-            <!-- TEMA 1: Probabilidad Clásica (ejemplo incluido) -->
-            <Button fx:id="btnTema1" maxWidth="Infinity" onAction="#abrirTema1" styleClass="nav-button">
-                <graphic>
-                    <HBox alignment="CENTER_LEFT" spacing="10">
-                        <FontIcon iconColor="#8b8fa8" iconLiteral="fas-dice" iconSize="15" />
-                        <Label mouseTransparent="true" text="Prob. Clásica" />
-                    </HBox>
-                </graphic>
-            </Button>
+                    <!-- TEMA 1: Probabilidad Clásica (ejemplo incluido) -->
+                    <Button fx:id="btnTema1" maxWidth="Infinity" onAction="#abrirTema1" styleClass="nav-button">
+                        <graphic>
+                            <HBox alignment="CENTER_LEFT" spacing="10">
+                                <FontIcon iconColor="#8b8fa8" iconLiteral="fas-dice" iconSize="15" />
+                                <Label mouseTransparent="true" text="Prob. Clásica" />
+                            </HBox>
+                        </graphic>
+                    </Button>
 
-            <!-- TEMA 2 (plantilla comentada — descomenta y personaliza) -->
-            <Button fx:id="btnTema2" maxWidth="Infinity" onAction="#abrirTema2" styleClass="nav-button">
-                <graphic>
-                    <HBox alignment="CENTER_LEFT" spacing="10">
-                        <FontIcon iconColor="#8b8fa8" iconLiteral="fas-random" iconSize="15" />
-                        <Label mouseTransparent="true" text="P1 Barajas" />
-                    </HBox>
-                </graphic>
-            </Button>
+                    <!-- TEMA 2 (plantilla comentada — descomenta y personaliza) -->
+                    <Button fx:id="btnTema2" maxWidth="Infinity" onAction="#abrirTema2" styleClass="nav-button">
+                        <graphic>
+                            <HBox alignment="CENTER_LEFT" spacing="10">
+                                <FontIcon iconColor="#8b8fa8" iconLiteral="fas-random" iconSize="15" />
+                                <Label mouseTransparent="true" text="P1 Barajas" />
+                            </HBox>
+                        </graphic>
+                    </Button>
 
 
-            <!-- TEMA 3: Regla Aditiva -->
-            <Button fx:id="btnTema3" maxWidth="Infinity" onAction="#abrirTema3" styleClass="nav-button">
-                <graphic>
-                    <HBox alignment="CENTER_LEFT" spacing="10">
-                        <FontIcon iconColor="#8b8fa8" iconLiteral="fas-plus-circle" iconSize="15" />
-                        <Label mouseTransparent="true" text="Regla Aditiva" />
-                    </HBox>
-                </graphic>
-            </Button>
+                    <!-- TEMA 3: Regla Aditiva -->
+                    <Button fx:id="btnTema3" maxWidth="Infinity" onAction="#abrirTema3" styleClass="nav-button">
+                        <graphic>
+                            <HBox alignment="CENTER_LEFT" spacing="10">
+                                <FontIcon iconColor="#8b8fa8" iconLiteral="fas-plus-circle" iconSize="15" />
+                                <Label mouseTransparent="true" text="Regla Aditiva" />
+                            </HBox>
+                        </graphic>
+                    </Button>
 
-            <!-- NUEVOS TEMAS -->
-            <Button fx:id="btnTema4" maxWidth="Infinity" onAction="#abrirTema4" styleClass="nav-button"><graphic><HBox alignment="CENTER_LEFT" spacing="10"><FontIcon iconColor="#8b8fa8" iconLiteral="fas-project-diagram" iconSize="15" /><Label mouseTransparent="true" text="Tipos Eventos" /></HBox></graphic></Button>
-            <Button fx:id="btnTema5" maxWidth="Infinity" onAction="#abrirTema5" styleClass="nav-button"><graphic><HBox alignment="CENTER_LEFT" spacing="10"><FontIcon iconColor="#8b8fa8" iconLiteral="fas-filter" iconSize="15" /><Label mouseTransparent="true" text="Prob. Condic." /></HBox></graphic></Button>
-            <Button fx:id="btnTema6" maxWidth="Infinity" onAction="#abrirTema6" styleClass="nav-button"><graphic><HBox alignment="CENTER_LEFT" spacing="10"><FontIcon iconColor="#8b8fa8" iconLiteral="fas-times" iconSize="15" /><Label mouseTransparent="true" text="Regla Mult." /></HBox></graphic></Button>
-            <Button fx:id="btnTema7" maxWidth="Infinity" onAction="#abrirTema7" styleClass="nav-button"><graphic><HBox alignment="CENTER_LEFT" spacing="10"><FontIcon iconColor="#8b8fa8" iconLiteral="fas-layer-group" iconSize="15" /><Label mouseTransparent="true" text="Cartas (3ev)" /></HBox></graphic></Button>
-            <Button fx:id="btnTema8" maxWidth="Infinity" onAction="#abrirTema8" styleClass="nav-button"><graphic><HBox alignment="CENTER_LEFT" spacing="10"><FontIcon iconColor="#8b8fa8" iconLiteral="fas-sitemap" iconSize="15" /><Label mouseTransparent="true" text="Prob. Total" /></HBox></graphic></Button>
-            <Button fx:id="btnTema9" maxWidth="Infinity" onAction="#abrirTema9" styleClass="nav-button"><graphic><HBox alignment="CENTER_LEFT" spacing="10"><FontIcon iconColor="#8b8fa8" iconLiteral="fas-balance-scale" iconSize="15" /><Label mouseTransparent="true" text="T. Bayes" /></HBox></graphic></Button>
-            <Button fx:id="btnTema10" maxWidth="Infinity" onAction="#abrirTema10" styleClass="nav-button"><graphic><HBox alignment="CENTER_LEFT" spacing="10"><FontIcon iconColor="#8b8fa8" iconLiteral="fas-chart-line" iconSize="15" /><Label mouseTransparent="true" text="Tendencia" /></HBox></graphic></Button>
-            <Button fx:id="btnTema11" maxWidth="Infinity" onAction="#abrirTema11" styleClass="nav-button"><graphic><HBox alignment="CENTER_LEFT" spacing="10"><FontIcon iconColor="#8b8fa8" iconLiteral="fas-chart-area" iconSize="15" /><Label mouseTransparent="true" text="Dispersión" /></HBox></graphic></Button>
-
-        </VBox>
-
-        <!-- Separador flexible para empujar el footer hacia abajo -->
-        <Region VBox.vgrow="ALWAYS" />
+                    <!-- NUEVOS TEMAS -->
+                    <Button fx:id="btnTema4" maxWidth="Infinity" onAction="#abrirTema4" styleClass="nav-button"><graphic><HBox alignment="CENTER_LEFT" spacing="10"><FontIcon iconColor="#8b8fa8" iconLiteral="fas-project-diagram" iconSize="15" /><Label mouseTransparent="true" text="Tipos Eventos" /></HBox></graphic></Button>
+                    <Button fx:id="btnTema5" maxWidth="Infinity" onAction="#abrirTema5" styleClass="nav-button"><graphic><HBox alignment="CENTER_LEFT" spacing="10"><FontIcon iconColor="#8b8fa8" iconLiteral="fas-filter" iconSize="15" /><Label mouseTransparent="true" text="Prob. Condic." /></HBox></graphic></Button>
+                    <Button fx:id="btnTema6" maxWidth="Infinity" onAction="#abrirTema6" styleClass="nav-button"><graphic><HBox alignment="CENTER_LEFT" spacing="10"><FontIcon iconColor="#8b8fa8" iconLiteral="fas-times" iconSize="15" /><Label mouseTransparent="true" text="Regla Mult." /></HBox></graphic></Button>
+                    <Button fx:id="btnTema7" maxWidth="Infinity" onAction="#abrirTema7" styleClass="nav-button"><graphic><HBox alignment="CENTER_LEFT" spacing="10"><FontIcon iconColor="#8b8fa8" iconLiteral="fas-layer-group" iconSize="15" /><Label mouseTransparent="true" text="Cartas (3ev)" /></HBox></graphic></Button>
+                    <Button fx:id="btnTema8" maxWidth="Infinity" onAction="#abrirTema8" styleClass="nav-button"><graphic><HBox alignment="CENTER_LEFT" spacing="10"><FontIcon iconColor="#8b8fa8" iconLiteral="fas-sitemap" iconSize="15" /><Label mouseTransparent="true" text="Prob. Total" /></HBox></graphic></Button>
+                    <Button fx:id="btnTema9" maxWidth="Infinity" onAction="#abrirTema9" styleClass="nav-button"><graphic><HBox alignment="CENTER_LEFT" spacing="10"><FontIcon iconColor="#8b8fa8" iconLiteral="fas-balance-scale" iconSize="15" /><Label mouseTransparent="true" text="T. Bayes" /></HBox></graphic></Button>
+                    <Button fx:id="btnTema10" maxWidth="Infinity" onAction="#abrirTema10" styleClass="nav-button"><graphic><HBox alignment="CENTER_LEFT" spacing="10"><FontIcon iconColor="#8b8fa8" iconLiteral="fas-chart-line" iconSize="15" /><Label mouseTransparent="true" text="Tendencia" /></HBox></graphic></Button>
+                    <Button fx:id="btnTema11" maxWidth="Infinity" onAction="#abrirTema11" styleClass="nav-button"><graphic><HBox alignment="CENTER_LEFT" spacing="10"><FontIcon iconColor="#8b8fa8" iconLiteral="fas-chart-area" iconSize="15" /><Label mouseTransparent="true" text="Dispersión" /></HBox></graphic></Button>
+                </VBox>
+            </VBox>
+        </ScrollPane>
 
         <!-- Footer: datos del alumno -->
         <VBox spacing="0" styleClass="sidebar-footer">
